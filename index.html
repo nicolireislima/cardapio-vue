@@ -37,37 +37,39 @@
 
                 <div class="col ">
                     <!-- Propriedade Computada -->
-                    <img :src="" alt="">
+                    <img src="" alt="">
 
-                     <img :src="">
-                     <img :src="">
-                     <img :src="">
-                     <img :src="">
-                     <img :src="">
-                     <img :src="">
-                     <img :src="">
+                     <img :src="pao[0]">
+                     <img :src="alface">
+                     <img :src="ketchup">
+                     <img :src="mostarda">
+                     <img :src="maionese">
+                     <img :src="burguer">
+                     <img :src="pao[1]">
+
                      
-
-
-
-                    
-
-
                 </div> <!-- col -->
+
 
                 
     
-            
-
-
+        
             </div>
 
             <!-- Seleção de produtos -->
-            <div class="col-md-6"> 
-                
+            <div class="col-md-6" v-if="etapa == 1">
+                <!-- Tipo de Pão -->
+                 <div class="row mt-2">
+                 </div class="col">
+
+                 <div class="card">
+                 <div class="card-header">
+                    Tipo de Pão
+                 </div>
 
 
-            </div>
+            
+
 
 
 
