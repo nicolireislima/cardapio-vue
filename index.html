@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAMBURGUER NDR </title>
 
-    
+
     <!-- Vue Js  -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
-     <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-    
+
+
 </head>
+
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <driv class="container justify-content-center">
@@ -27,72 +29,84 @@
         <div class="app">
 
 
-        <div class="row">
+            <div class="row">
 
 
-            <!-- Imagens do Burguer -->
-            <div class="col-md-6">
-                <div class=" row mt-2">
+                <!-- Imagens do Burguer -->
+                <div class="col-md-6">
+                    <div class=" row mt-2">
 
 
-                <div class="col ">
-                    <!-- Propriedade Computada -->
-                    <img src="" alt="">
+                        <div class="col ">
+                            <!-- Propriedade Computada -->
+                            
+                            <img :src="pao[0]">
+                            <img :src="alface">
+                            <img :src="ketchup">
+                            <img :src="mostarda">
+                            <img :src="maionese">
+                            <img :src="burguer">
+                            <img :src="pao[1]">
 
-                     <img :src="pao[0]">
-                     <img :src="alface">
-                     <img :src="ketchup">
-                     <img :src="mostarda">
-                     <img :src="maionese">
-                     <img :src="burguer">
-                     <img :src="pao[1]">
+                        </div> <!-- col -->
+                    </div>
+                </div>
 
-                     
-                </div> <!-- col -->
+                <!-- Seleção de produtos -->
+                <div class="col-md-6" v-if="etapa == 1">
+                    <!-- Tipo de Pão -->
+                    <div class="row mt-2">
+                        <div class="col">
 
+                            <div class="card">
+                                <div class="card-header">
+                                    Tipo de Pão
 
-                
-    
-        
-            </div>
+                                <div class="card-body">
 
-            <!-- Seleção de produtos -->
-            <div class="col-md-6" v-if="etapa == 1">
-                <!-- Tipo de Pão -->
-                 <div class="row mt-2">
-                 </div class="col">
-
-                 <div class="card">
-                 <div class="card-header">
-                    Tipo de Pão
-                 </div>
+                                    <div class="form-check form-check-incline">
 
 
-            
+                                        <input type="radio" class="form-check-imput">
+
+                                        <label class="form-check-label"> Gergelim </label>
+                                    </div>  
+                                     <div class="form-check form-check-incline">
+
+
+                                        <input type="radio" class="form-check-imput">
+
+                                        <label class="form-check-label"> Australiano </label>
+                                     </div>
+                        
+                                    
+                                    
 
 
 
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div> <!-- Fim ROW -->
 
-        </div> <!-- Fim ROW -->
-
-
-
-            
         </div>
-         <!-- Fim app -->
+        <!-- Fim app -->
 
     </div>
 
     <!-- instancia VUE -->
-     <script>
-
-    
+    <script>
 
 
-     </script>
 
-    
+
+    </script>
+
+
 </body>
+
 </html>
