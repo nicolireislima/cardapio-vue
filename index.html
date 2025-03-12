@@ -104,41 +104,64 @@
 
 
                                        <input type="checkbox" 
-                                       class="form-check-input" value="alface" v-model="">
+                                       class="form-check-input" value="alface" v-model="inputSalada">
 
                                        <label for="form-check-label"> Alface </label>
 
                                     </div>
-
-                                  
-
-                                  
                                 </div>
-                        
                             </div>
-
                         </div>
-                    </div
-                
-                    
-                      
-                      
+                    </div>
+                  <!-- Fim Salada -->
+
+                  <!-- Molhos -->
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                            
+                                <div class="card-header">
+                                   Molhos
+                                <div>
+                                <div class="card-body">
+
+                                    <div class="form-check">
+
+                                        <input type="checkbox" 
+                                       class="form-check-input" value="molho" v-model="inputMolho">
+
+                                       <label for="form-check-label">Ketchup</label>
+
+                                       
+
+                                       
+
+
+
+
+                                    </div>
+                                 
+
+                                </div>
+
+                                
+
+                                    
+
+
+
+                            <div>
+                        <div>
+                    </div>
+
 
                 
+                </div> 
+            <div>
+            
 
-                
-                        
-
-
-
-
-
-                    
-                     
-                              
-                </div>
-            </div> 
-            <!-- Fim ROW -->
+           <!-- Fim ROW -->
+            
              
 
         
@@ -156,10 +179,10 @@
         const vm = new Vue({
             el: '#app',            
 
-            /* atributos */
-            data: {
-                inputTipoPao: '',
-                
+            
+            data: { // atributos //
+                inputTipoPao: '', /* radio = obrigatorio */
+                inputSalada: [], /* checkbox = opcional */
                 etapa: 1,
 
             },
@@ -170,7 +193,7 @@
                     switch (this.inputTipoPao) {
                         case 'gergelim':
 
-                         return ['imagens/pao_gergelim_superior.png','imagens/pao_australiano_inferior.png']
+                         return ['imagens/pao_gergelim_superior.png','imagens/pao_gergelim_inferior.png']
                         case 'australiano': 
                          return ['imagens/pao_australiano_superior.png','imagens/pao_australiano_inferior.png']
                         default: 
@@ -180,10 +203,18 @@
 
                     }
                 },
+                
+                alface () {
+                    if (this.inputSalada.includes('alface')) {
+                        return 'imagens/alface.png'
+                    }
 
+                    return 'imagens/padrao/alface.png'
+                },
+
+                  
             },
-
-
+               
         })
 
     </script>
