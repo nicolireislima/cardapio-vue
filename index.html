@@ -41,10 +41,11 @@
                             <img :src="ketchup">
                             <img :src="mostarda">
                             <img :src="maionese">
-                            <img :src="burger">
+                            <img :src="hamburguer">
                             <img :src="pao[1]">
 
-                        </div> <!-- col -->
+                            <!-- col -->                      
+                        </div> 
                     </div>
                 </div>
 
@@ -148,6 +149,62 @@
                     </div>
                     <!-- Fim Molhos -->
 
+                    <!-- Tipos Hamburguer -->
+                    <div class="row mt=2">
+                        <div class="col">
+                            <div class="card">
+
+                                <div class="card-header">
+                                   Tipo de Hamburguer
+                                </div>
+
+                                <!-- Bovino -->
+                                <div class="card-body">
+
+                                    <div class="form-check form-check-inline">
+
+                                     <input type="radio" value="bovino" v-model="inputHamburguer">
+
+                                     <label class="form-check-label"> Bovino </label>
+
+                                    </div>
+
+
+                                        <!-- Frango -->
+                                    <div class="form-check form-check-inline">
+
+                                     <input type="radio" value="frango" v-model="inputHamburguer">
+
+                                     <label class="form-check-label"> Frango </label>
+
+                                    </div>
+
+                                    <!-- Vegetal -->
+                                    <div class="form-check form-check-inline">
+
+                                        <input type="radio" value="vegetal" v-model="inputHamburguer">
+
+                                        <label class="form-check-label"> Vegetal </label>
+   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                  
+                    </div> <!-- Fim do Hamburguer -->
+
+                    <!-- Fazer o Pedido -->
+                    <div class="row mt=2">
+
+                        <div class="col d-flex justify-content-end">
+                            
+                            <button class="btn btn-primary">
+                                Fazer o Pedido
+                            </button>
+
+                        </div>
+                    </div>
+
+
                     
 
 
@@ -157,6 +214,8 @@
 
                 </div> <!-- Fim Etapa 1 -->
                 <!-- Fim col md -->
+ 
+                
 
                                 
 
@@ -173,7 +232,7 @@
                 inputTipoPao: '',  /* radio = Obrigatorio */ 
                 inputSalada: [], /* checkbox = opcional */
                 inputMolhos: [],
-                
+                inputHamburguer:'',
                 
                 etapa: 1,
                 
@@ -231,6 +290,30 @@
                     
                     return 'imagens/padrao/molho.png'
                 
+                },
+
+                hamburguer () {
+                    switch(this.inputHamburguer) {
+                        case 'bovino': 
+                          return 'imagens/bovino.png'
+
+                        case 'frango': 
+                         return 'imagens/frango.png'
+
+                        case 'vegetal': 
+                           return 'imagens/soja.png'
+
+                        default: 
+                        return 'imagens/padrao/hamburguer.png'
+
+                    
+
+
+
+                       
+                    }
+
+
                 },
 
 
