@@ -192,10 +192,12 @@
                         </div>                  
                     </div> <!-- Fim do Hamburguer -->
 
+
+
                     <!-- Fazer o Pedido -->
                     <div class="row mt=2">
 
-                        <div class="col d-flex justify-content-end">
+                        <div class="col d-flex justify-content-end" type="button" @click="fazerPedido()">
                             
                             <button class="btn btn-primary">
                                 Fazer o Pedido
@@ -212,8 +214,35 @@
                     
                     
 
-                </div> <!-- Fim Etapa 1 -->
-                <!-- Fim col md -->
+                </div> <!-- Fim Etapa 1  // Fim col md -->
+
+                <div class="col-md-6" v-if="etapa == 2">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+
+                                <div class="card-header">
+                                    Informe seus Dados
+                                 </div>
+
+                                 Nome
+
+
+                                 
+
+
+                                
+
+                                Mesa
+
+                             
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
  
                 
 
@@ -313,16 +342,26 @@
                        
                     }
 
-
                 },
 
-
-
-
-
-
-                
             },
+
+            methods: {
+                fazerPedido() {
+                    //se Pão e Carne forem Selecionados
+                    if(this.inputTipoPao && this.inputHamburguer) {
+                        this.etapa = 2 
+                        // avança para etapa
+                    }                   
+                    else {
+                        alert('Você precisa selecionar no minimo um pão e uma carne')
+                    }
+
+                }
+
+            },
+
+
             
             
         })
