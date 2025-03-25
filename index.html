@@ -270,7 +270,55 @@
                     </div>
 
         
-                </div> <!-- fim etapa 2 -->
+                </div> <!-- Fim etapa 2 -->
+
+
+                <!-- Repetir pedido -->
+                 <!-- Etapa 3 -->
+                <div class="col-md-6" v-if="etapa == 3">
+
+                    <!-- Pedido confirmado -->
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+
+                                <div class="card-header">
+                                    Pedido confirmado
+                                </div>
+
+                                <div class="card-body">
+                                    <p>Agora é só aguardar.</p>
+                                    <p> Vamos levar o pedido até você.</p>
+                                </div>
+
+                            </div> <!-- fim Card -->
+
+                        </div>
+
+                    </div> <!-- Fim pedido confirmado -->
+
+                    <div class="row mt-2">
+
+                        <div class="col d-flex justify-content-between">
+
+                            <!-- Botao 1 Repetir pedido -->
+                            <button class="btn btn-primary" type="button" @click="etapa = 1">
+                              Repetir pedido
+                            </button>
+
+                            <!--  Botao 2 Novo pedido -->
+                            <button class="btn btn-success" type="button" @click="novoPedido()">
+                              Novo Pedido
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                </div> <!--  fim etapa 3 -->
+
+                
 
             </div> <!-- fim ROW -->
         </div> <!-- FIM APP -->
@@ -395,6 +443,19 @@
                     else {
                         alert('Você precisa informar o seu Nome e a Mesa')
                     }
+                },
+
+                novoPedido() {
+
+                    this.etapa = 1 
+
+                    this.inputTipoPao = ''
+                    this.inputSalada = []
+                    this.inputMolhos = []
+                    this.inputHamburguer = ''
+                    this.inputNome = ''
+                    this.inputMesa = ''
+
                 },
 
             },
