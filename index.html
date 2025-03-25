@@ -339,6 +339,7 @@
 
                 inputNome: '',
                 inputMesa: '',
+                novoPedidoAssincrono: null
 
                 
                 
@@ -457,6 +458,14 @@
                     this.inputMesa = ''
 
                 },
+
+            },
+            watch: {
+                etapa(novoValor) {
+                    if (novoValor == 1) {
+                        clearTimeout(this.novoPedidoAssincrono)
+                    }
+                }
 
             },
 
